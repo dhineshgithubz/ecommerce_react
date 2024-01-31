@@ -1,0 +1,90 @@
+.car1 {
+    width: 100%;
+    transition: opacity 2s ease-in-out;
+    margin-top: 50px;
+}
+
+.car2 {
+    width: 100%;
+    margin-top: 50px;
+    background-size: cover;
+}
+
+
+ol {
+    position: absolute;
+    top: 30%;
+    margin-left: 15px !important;
+    ;
+    bottom: 0px !important;
+    display: block !important;
+}
+
+.carousel-indicators li {
+    width: 6px !important;
+    height: 30px !important;
+    border-radius: 28% !important;
+    background-color: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+}
+
+.carousel-indicators .active {
+    background-color: black !important;
+    border-radius: 50% !important;
+
+}
+
+
+
+.carousel.carousel-inner>.carousel-item>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.carousel.slide.vertical {
+    position: relative;
+}
+
+.carousel.slide.vertical .carousel-inner {
+    display: flex;
+
+
+}
+
+.carousel.slide.vertical .carousel-item {
+    transform: translate3d(0, 100%, 0);
+    height: 100%;
+    width: 100%;
+    transition: transform 2s cubic-bezier(0, 0.99, 1, 0.98);
+
+}
+
+.carousel.slide.vertical .carousel-item.active {
+    transform: translate3d(0, 0, 0);
+    transition: transform 2s cubic-bezier(0, 0.99, 1, 0.98);
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+}
+
+.carousel.slide.vertical .carousel-item-next,
+.carousel.slide.vertical .carousel-item.active.right {
+    transform: translate3d(0, 100%, 0);
+    transition: transform 2s cubic-bezier(0, 0.99, 1, 0.98);
+
+}
+
+.carousel.slide.vertical .carousel-item-prev,
+.carousel.slide.vertical .carousel-item.active.left {
+    transform: translate3d(0, -100%, 0);
+    transition: transform 2s cubic-bezier(0, 0.99, 1, 0.98);
+}
+
+.carousel.slide.vertical .carousel-item.next.left,
+.carousel.slide.vertical .carousel-item.prev.right,
+.carousel.slide.vertical .carousel-item.active {
+    transform: translate3d(0, 0, 0);
+    transition: transform 2s cubic-bezier(0, 0.99, 1, 0.98);
+}

@@ -1,0 +1,849 @@
+
+
+.card-container {
+    transition: filter 0.3s, opacity 0.3s;
+}
+
+
+
+
+.cardlist {
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 130px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cardlistzoom {
+    box-shadow: none;
+    width: 60%;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.textpricezoom {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.zoom {
+    transform: scale(1.4);
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    transition: transform 0.3s ease-in-out;
+    height: 100vh;
+    z-index: 1;
+}
+
+.imagelist img {
+    width: 100%;
+    height: 230px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.rating {
+    width: 55px;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.textratingzoom {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+}
+
+.margin {
+    margin-top: 130px;
+}
+
+.textproduct_card {
+    text-transform: capitalize;
+}
+
+.textnamezoom {
+    position: absolute;
+    left: -30px;
+    top: 20%;
+    font-size: 32px;
+    text-transform: capitalize;
+    font-weight: lighter;
+    font-style: italic;
+
+}
+
+.size {
+    position: absolute;
+    left: 140px;
+    top: 30%;
+    font-size: 12px;
+    text-transform: capitalize;
+    font-weight: lighter;
+
+}
+
+.sizecircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.941);
+    border: 1px solid black;
+    color: black;
+}
+
+.sizecircle:hover,
+.sizecircle:active,
+.sizecircle.clicked {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+
+.card-container.selected {
+    background-color: rgb(255, 255, 255);
+    width: 80%;
+}
+
+.card-container.selected img {
+    width: 35%;
+}
+
+.selected-card {
+    background-color: rgba(0, 0, 0);
+}
+
+.close-button {
+    position: absolute;
+    left: 7%;
+    top: 5%;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.btnAddcart {
+    background-color: rgb(229, 99, 43);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    width: 150px;
+    font-weight: 700;
+}
+
+.btnAddcart.btndisable {
+    background-color: rgba(139, 139, 139, 0.506);
+    color: rgba(118, 118, 118, 0.76);
+}
+
+.btnAddcart:hover {
+    background-color: rgb(166, 55, 7);
+}
+
+.btnBuy:hover {
+    background-color: rgb(172, 156, 15);
+}
+
+.btnBuy {
+    background-color: rgb(255, 232, 30);
+    color: rgb(3, 3, 3);
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+    font-weight: 700;
+    width: 150px;
+    margin-left: 10px;
+}
+
+.btnBuy.btndisable {
+    background-color: rgba(139, 139, 139, 0.506);
+    color: rgba(118, 118, 118, 0.76);
+}
+
+.btnBuy.btndisable:hover {
+    background-color: rgba(139, 139, 139, 0.506);
+    color: rgba(118, 118, 118, 0.76);
+}
+
+.btnAddcart.btndisable:hover {
+    background-color: rgba(139, 139, 139, 0.506);
+    color: rgba(118, 118, 118, 0.76);
+}
+
+.textClick {
+    font-size: 12px;
+    color: gray;
+
+}
+
+.textnamehide {
+    display: none;
+}
+
+.ratingshow {
+    display: none;
+}
+
+.sizehide {
+    display: none;
+}
+
+.buttonhide {
+    display: none;
+}
+
+
+
+@media screen and (min-width:320px) and (max-width: 480px) {
+    .cardlist {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 65%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 1%;
+        font-size: 20px;
+    }
+
+    .cardlistzoom {
+        margin-top: 50px;
+    }
+
+    .textnamehide {
+        display: inline;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: none;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 10px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 100px;
+        font-weight: 400;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 400;
+        width: 100px;
+
+
+    }
+}
+
+@media screen and (min-width:481px) and (max-width: 576px) {
+    .cardlist {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 45%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 1%;
+        font-size: 20px;
+    }
+
+    .cardlistzoom {
+        margin-top: 50px;
+    }
+
+    .textnamehide {
+        display: inline;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: none;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+        text-align:end;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 10px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 100px;
+        font-weight: 400;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 400;
+        width: 100px;
+
+
+    }
+
+}
+
+@media screen and (min-width:577px) and (max-width: 640px) {
+    .cardlist {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 50%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 1%;
+        font-size: 20px;
+    }
+
+    .cardlistzoom {
+        margin-top: 50px;
+    }
+
+    .textnamehide {
+        display: inline;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: none;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: end;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 10px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 100px;
+        font-weight: 400;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 400;
+        width: 100px;
+
+
+    }
+}
+
+@media screen and (min-width:641px) and (max-width: 767px) {
+    .cardlist {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 35%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 1%;
+        font-size: 20px;
+    }
+
+    .cardlistzoom {
+        margin-top: 50px;
+    }
+
+    .textnamehide {
+        display: inline;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: none;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: end;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 10px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 100px;
+        font-weight: 400;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 400;
+        width: 100px;
+
+
+    }
+}
+
+@media screen and (min-width:768px) and (max-width: 1024px) {
+    .cardlist {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 35%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 1%;
+        font-size: 20px;
+    }
+
+    .cardlistzoom {
+        margin-top: 50px;
+    }
+
+    .textnamehide {
+        display: inline;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: none;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: end;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 10px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 100px;
+        font-weight: 400;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: 400;
+        width: 100px;
+
+
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+
+
+    .zoom {
+        top: 27%;
+        left: 0;
+    }
+
+    .card-container.selected {
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        margin-right: 60px;
+    }
+
+
+    .card-container.selected img {
+        width: 30%;
+    }
+
+    .close-button {
+        left: 17%;
+        top: 3%;
+        font-size: 20px;
+    }
+
+
+
+    .textnamehide {
+        display: none;
+        font-style: italic;
+        font-weight: 700;
+    }
+
+    .ratinghide {
+        display: none;
+    }
+
+    .textnamezoom {
+        display: inline;
+    }
+
+    .ratingshow.ratingshow1 {
+        display: inline;
+    }
+
+    .textpricezoom {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: end;
+
+    }
+
+    .size {
+        display: none;
+    }
+
+    .sizehide.showsizehide {
+        display: inline;
+    }
+
+    .flexsize {
+        gap: 30px;
+    }
+
+    .sizecircle {
+        margin-top: 10px;
+        font-size: 10px;
+        padding-top: 2px;
+    }
+
+    .hidepricezoom {
+        display: none;
+    }
+
+    .hidebuttons {
+        display: none;
+    }
+
+    .showbuttonhide {
+        display: inline-flex;
+    }
+
+
+    .btnAddcart {
+        font-size: 12px;
+        padding: 10px;
+        width: 120px;
+        font-weight: bold;
+        margin-top: 20px;
+
+    }
+
+    .btnBuy {
+        font-size: 12px;
+        padding: 10px;
+        font-weight: bold;
+        width: 120px;
+
+
+    }
+
+    .colhide {
+        display: none;
+    }
+}

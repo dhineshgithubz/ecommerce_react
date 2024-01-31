@@ -1,0 +1,173 @@
+.kidsbanner {
+    width: 100%;
+    height: 170px;
+    background-color: rgb(0, 0, 0);
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.kidsbanner img {
+    background-size: cover;
+    height: 170px;
+    width: 60%;
+
+}
+
+.containermens {
+    width: 70%;
+    height: 400px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+.stripe111 img,
+.stripe222 img,
+.stripe333 img,
+.stripe444 img {
+    width: 100%;
+    height: 100%;
+    transform: scale(1) !important;
+    filter: brightness(40%) !important;
+
+}
+
+.stripe111 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    transform: skewY(10deg);
+}
+
+.stripe222 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    transform: skewY(-10deg);
+}
+
+.stripe333 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    transform: skewY(10deg);
+}
+
+.stripe444 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    transform: skewY(-10deg);
+
+}
+
+
+.textstripe {
+    font-size: 20px;
+    transform: rotate(-90deg);
+}
+
+.stripe111 img:hover,
+.stripe222 img:hover,
+.stripe333 img:hover,
+.stripe444 img:hover {
+    filter: blur(0) !important;
+    transform: scale(0.99);
+
+
+}
+
+
+@media screen and (min-width:320px) and (max-width: 480px) {
+    .kidsbanner {
+        height: 80px;
+    }
+
+    .kidsbanner img {
+        height: 80px;
+    }
+
+    .stripe333 {
+        margin-top: 15px;
+    }
+
+    .stripe444 {
+        margin-top: 15px;
+    }
+
+
+
+
+}
+
+@media screen and (min-width:481px) and (max-width: 576px) {
+    .kidsbanner {
+        height: 80px;
+    }
+
+    .kidsbanner img {
+        height: 80px;
+    }
+
+    .stripe333 {
+        margin-top: 15px;
+    }
+
+    .stripe444 {
+        margin-top: 15px;
+    }
+
+
+}
+
+@media screen and (min-width:577px) and (max-width: 640px) {
+    .kidsbanner {
+        height: 80px;
+    }
+
+    .kidsbanner img {
+        height: 80px;
+    }
+
+    .stripe333 {
+        margin-top: 15px;
+    }
+
+    .stripe444 {
+        margin-top: 15px;
+    }
+
+
+}
+
+@media screen and (min-width:641px) and (max-width: 767px) {
+    .kidsbanner {
+        height: 80px;
+    }
+
+    .kidsbanner img {
+        height: 80px;
+    }
+
+    .stripe333 {
+        margin-top: 15px;
+    }
+
+    .stripe444 {
+        margin-top: 15px;
+    }
+
+
+}
+
+@media screen and (min-width:768px) and (max-width: 1024px) {}
+
+@media screen and (min-width:1025px) {}

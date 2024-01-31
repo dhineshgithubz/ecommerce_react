@@ -1,0 +1,25 @@
+.bgfooter {
+    background-color: black !important;
+    color: grey !important;
+
+}
+
+.iconfoot1 {
+    color: rgb(46, 46, 255);
+    font-size: 20px;
+}
+
+.iconfoot2 {
+    color: rgb(18, 188, 255);
+    font-size: 20px;
+}
+
+.iconfoot4 {
+    color: rgb(201, 53, 255);
+    font-size: 20px;
+}
+
+.iconfoot5 {
+    color: rgb(0, 198, 40);
+    font-size: 20px;
+}
