@@ -25,7 +25,7 @@ const Header = () => {
   const [alertVisible, setAlertVisible] = useState(false);
   const [alertitemVisible, setAlertitemVisible] = useState(false);
  const navigate = useNavigate();
- const { setorderVisible,setSize, isLoggedIn, setIsLoggedIn, cart, setCart, shakeCart, user, setUser, isActiveHome, setIsActiveHome, isActiveMens, setIsActiveMens,
+ const { setorderVisible,setSize,isLoggedIn, setIsLoggedIn, cart, setCart, shakeCart, user, setUser, isActiveHome, setIsActiveHome, isActiveMens, setIsActiveMens,
     isActiveWomens, setIsActiveWomens, isActiveKids, setIsActiveKids } = useContext(DataContext);
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -96,7 +96,7 @@ const Header = () => {
 
   const handleLogout = () => {
     try {
-      console.log("logout");
+      setShowcart(false);
       deleteStorage();
       setIsLoggedIn(false);
       setIsActiveHome(false);
@@ -104,6 +104,7 @@ const Header = () => {
       setIsActiveWomens(false);
       setIsActiveKids(false);
       setSize(null);
+      setMenu(false);
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -519,11 +520,14 @@ const Header = () => {
                   </div>
                   <div className="row btnprofile">
                     <div className="col-md-12">
-                      <div className="btn btn-danger logoutbtn bg-dark w-100" onClick={handleLogout}
+                      <Link to="/login" onClick={handleLogout}>
+                        <div className="btn btn-danger logoutbtn bg-dark w-100" 
 
-                      >
-                        Logout
-                      </div>
+                        >
+                          Logout
+                        </div>
+                      </Link>
+                     
                     </div>
 
                   </div>
