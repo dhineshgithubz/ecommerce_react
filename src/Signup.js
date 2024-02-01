@@ -81,18 +81,11 @@ const Signup = () => {
 
             } catch (err) {
 
-
-                if (err.response.data.error.message ===
-                    "WEAK_PASSWORD : Password should be at least 6 characters") {
-                    setError({ ...error, customerror: "Password should be at least 8 characters" });
-                }
-
-
+                setError({ ...error, customerror: "UserAccount already exists" });
 
             }
 
         }
-        setError({ ...error });
     }
 
 

@@ -1,8 +1,16 @@
 import React from 'react'
 import './Loading.css';
 import { ReactComponent as ReactLogo } from '../src/img/loader.svg';
+import { useLocation } from 'react-router-dom';
+
 
 const Loading = () => {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+
     return (
         <div>
             <div className="container-fluid">

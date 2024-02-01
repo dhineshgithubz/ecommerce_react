@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Login.css'
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { Link, useNavigate,useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { loginApi } from './services/Api';
 import { setStorage } from './services/Storage';
 
@@ -12,7 +12,7 @@ const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigate = useNavigate();
     const { pathname } = useLocation();
-     
+
     const [error, setError] = useState(
         {
             email: { required: false },
@@ -55,29 +55,13 @@ const Login = () => {
                 await loginApi(input).then((response) => {
                     setStorage(response.data.idToken);
                     navigate('/');
-
+                    setError({ ...error, customerror: false });
                 })
-
-
-
-                setError({ ...error, customerror: false });
-
             } catch (err) {
-                if (err.response.data.error.message ===
-                    "WEAK_PASSWORD : Password should be at least 6 characters") {
-                    console.log("weakerrrr");
-                    setError({ ...error, customerror: "Password should be at least 8 characters" });
-                    console.log(error.customerror);
-                }
-                else {
-                    console.log(err.message);
-                }
-              
-
+                setError({ ...error, customerror: "Username and password is incorrect" });
             }
 
         }
-        setError({ ...error });
     }
 
 
