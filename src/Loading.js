@@ -1,5 +1,7 @@
 import React from 'react'
 import './Loading.css';
+import {useEffect } from 'react'
+
 import { ReactComponent as ReactLogo } from '../src/img/loader.svg';
 import { useLocation } from 'react-router-dom';
 
