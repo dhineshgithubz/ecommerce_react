@@ -129,7 +129,7 @@ const Header = () => {
 
   const displayCartSlider = () => {
     if (isLoggedIn) {
-      setShowcart(!showCart);
+      setShowcart(true);
       setMenu(false);
 
     }
@@ -453,7 +453,7 @@ const Header = () => {
       </div>
 
 
-      {showCart && (
+      {showCart===true && (
         <div className="row">
           <div className="col-md-8 col-4"></div>
           <div className="col-md-4 col-8">

@@ -57,16 +57,13 @@ const ProductCard = ({ collectionName, storageName }) => {
     };
 
     const handleOrder = () => {
-        if (size != null) {
+        if (size !== null) {
             if (selectedCard !== null && product && product[selectedCard]) {
 
                 setOrder([product[selectedCard]]);
                 setorderVisible(false);
                 navigate('/orderpage');
-
-
-
-            }
+                }
         }
         else {
             setAlertVisible(true);

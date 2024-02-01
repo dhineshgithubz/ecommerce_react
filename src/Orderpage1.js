@@ -23,9 +23,6 @@ const Orderpage1 = () => {
   const alertFont = isSmallScreen ? '11px' : '16px';
   const alertTop = isSmallScreen ? '8%' : '12%';
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
 
   const handleAlertClick = (e) => {
     e.preventDefault();
@@ -59,6 +56,11 @@ const Orderpage1 = () => {
     checkAuthentication();
 
   }, [setIsLoggedIn])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   useEffect(
     () => {
       setIsActiveHome(false);
@@ -186,7 +188,7 @@ const Orderpage1 = () => {
                 <div className="col-md-3 col-sm-3 col-2">
 
                 </div>
-                <div className="col-md-6 col-sm-6 col-8 mt-5  text-center">
+                <div className="col-md-6 col-sm-6 col-5 mt-5  text-center">
 
                   <form action="" className="text-center">
                     <label htmlFor="">Name: </label>
@@ -219,7 +221,7 @@ const Orderpage1 = () => {
                   <div className="col-md-4 col-2 col-sm-4 col-lg-3">
 
                   </div>
-                  <div className="col-md-7 col-10 text-center col-sm-7 mt-5 ">
+                  <div className="col-md-7 col-6 text-center col-sm-7 mt-5 ">
 
                     <form action="" className='text-center'>
 
@@ -272,7 +274,7 @@ const Orderpage1 = () => {
                     <div className="col-md-4 col-sm-4 col-2 col-lg-3">
 
                     </div>
-                    <div className="col-md-7 col-sm-7 col-7 mt-5 text-start">
+                    <div className="col-md-7 col-sm-7 col-5 mt-5 text-start">
 
                       <form action="">
                         <input type="radio" name="pay" style={{ "marginRight": "20px" }} />
