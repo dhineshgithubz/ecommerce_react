@@ -444,7 +444,7 @@ const Header = () => {
               }
               <Link onClick={displayProfile} className="iconprofile "><CgProfile /></Link>
               <Link onClick={displayCartSlider} className="iconcart"><FaCartShopping />
-                <div className={`dot ${shakeCart ? 'shake' : ''}`}>{storedCart.length}</div>
+                <div className={`dot ${shakeCart ? 'shake' : ''}`}>{storedCart?storedCart.length:"0"}</div>
               </Link>
             </div>
           </div>
