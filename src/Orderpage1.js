@@ -190,7 +190,7 @@ const Orderpage1 = () => {
                 </div>
                 <div className="col-md-6 col-sm-6 col-5 mt-5  text-center">
 
-                  <form action="" className="text-center">
+                  <form action="" className="text-center orderform">
                     <label htmlFor="">Name: </label>
                     <br />
                     <input type="text" value={user.displayName} />
@@ -223,7 +223,7 @@ const Orderpage1 = () => {
                   </div>
                   <div className="col-md-7 col-6 text-center col-sm-7 mt-5 ">
 
-                    <form action="" className='text-center'>
+                    <form action="" className="text-center orderform">
 
                       <div className="text-start">
                         <label htmlFor="">Address Line1: </label>
@@ -289,7 +289,11 @@ const Orderpage1 = () => {
                         <br />
                         <input type="radio" name="pay" style={{ "marginRight": "20px" }} />
 
-                        <label htmlFor="">Other UPI </label><input type="text" placeholder='Enter UPI ID' style={{ "marginLeft": "10px" }} />
+                        <label htmlFor="">Other UPI </label>
+                        <div className="orderform">
+                          <input type="text" placeholder='Enter UPI ID' style={{ "marginLeft": "10px" }} />
+
+                        </div>
                         <br /><br />
                         <input type="radio" name="pay" style={{ "marginRight": "20px" }} />
 

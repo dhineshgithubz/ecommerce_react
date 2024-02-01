@@ -276,6 +276,9 @@
     .header {
         margin-top: 80px;
     }
+    .orderform input{
+        width: 80% !important;
+    }
 
 }
 
