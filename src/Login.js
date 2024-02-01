@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './Login.css'
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useLocation } from 'react-router-dom';
 import { loginApi } from './services/Api';
 import { setStorage } from './services/Storage';
 
@@ -11,6 +11,8 @@ import { setStorage } from './services/Storage';
 const Login = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+     
     const [error, setError] = useState(
         {
             email: { required: false },
@@ -24,6 +26,11 @@ const Login = () => {
             password: ""
         }
     )
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     const toggleVisibility = () => {
         setPasswordVisible(!passwordVisible);
     };

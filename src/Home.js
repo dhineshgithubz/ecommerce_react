@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useContext, useEffect, useState } from 'react';
 
 import './Home.css';
@@ -34,7 +35,7 @@ import DataContext from './context/DataContext';
 
 const Home = () => {
 
-  const { setIsLoggedIn} = useContext(DataContext);
+  const { setIsLoggedIn, setIsActiveHome, setIsActiveMens, setIsActiveWomens, setIsActiveKids } = useContext(DataContext);
   const [alertVisible] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -43,7 +44,25 @@ const Home = () => {
   const alertHeight = isSmallScreen ? '25px' : '50px';
   const alertFont = isSmallScreen ? '11px' : '16px';
   const alertTop = isSmallScreen ? '8%' : '12%';
+  
+  useEffect(() => {
+    const carousel = new window.bootstrap.Carousel(document.getElementById('carousel-example-generic'), {
+      interval: 3000,
+    });
 
+    return () => {
+      carousel.dispose();
+    };
+  }, []);
+  
+  useEffect(
+    () => {
+      setIsActiveHome(true);
+      setIsActiveMens(false);
+      setIsActiveWomens(false);
+      setIsActiveKids(false);
+    }, [setIsActiveHome, setIsActiveMens, setIsActiveWomens, setIsActiveKids]
+  )
   useEffect(() => {
     const checkAuthentication = () => {
       setIsLoggedIn(authenticate());

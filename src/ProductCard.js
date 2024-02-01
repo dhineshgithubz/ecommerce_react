@@ -6,7 +6,7 @@ import { authenticate } from './services/Auth';
 import { IoChevronBackCircleSharp } from "react-icons/io5";
 import { MdStar } from "react-icons/md";
 import './ProductCard.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import DataContext from './context/DataContext';
 import Loading from "./Loading";
 import Alert from '@mui/material/Alert';
@@ -17,9 +17,10 @@ const ProductCard = ({ collectionName, storageName }) => {
     const [images, setImages] = useState([]);
     const { setIsLoggedIn, setorderVisible, cart, size, setSize, setShakeCart, setCart, product, setOrder, setproduct, selectedCard, setSelectedCard } = useContext(DataContext);
     const [loading, setLoading] = useState(true)
-    const [setIsClicked] = useState(false);
     const [alertVisible, setAlertVisible] = useState(false);
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+
 
 
     const handleAddToCart = () => {
@@ -83,7 +84,10 @@ const ProductCard = ({ collectionName, storageName }) => {
             setSize(null);
         }, 0);
     };
-
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     useEffect(() => {
         const checkAuthentication = () => {
@@ -140,7 +144,6 @@ const ProductCard = ({ collectionName, storageName }) => {
 
     function selectSize(s) {
         setSize(s);
-        setIsClicked(true);
        }
 
 

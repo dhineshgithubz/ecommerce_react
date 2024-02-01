@@ -12,7 +12,7 @@ import Slide from '@mui/material/Slide';
 import { useTheme, useMediaQuery } from '@mui/material';
 import Loading from "./Loading";
 import { authenticate } from './services/Auth';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useLocation} from 'react-router-dom'
 
 const Mens = () => {
     const {setIsLoggedIn, setIsActiveHome,setIsActiveMens,
@@ -22,6 +22,8 @@ const Mens = () => {
     const [loading, setLoading] = useState(true);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const { pathname } = useLocation();
+
 
     const alertWidth = isSmallScreen ? '90%' : '400px';
     const alertHeight = isSmallScreen ? '25px' : '50px';
@@ -93,6 +95,9 @@ const Mens = () => {
             }, 3500);
         }
     };
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     useEffect(
         () => {
             setIsActiveHome(false);

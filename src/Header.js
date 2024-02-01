@@ -411,37 +411,45 @@ const Header = () => {
     <div >
       <div className="container-fluid bgheader">
         <div className="row py-3">
-          <div className="col-2 menu " onClick={menuSlider}>
+          <div className="col-2 menu" onClick={menuSlider}>
 
             <CgMenuLeft />
 
           </div>
-          <div className="col-md-4 col-sm-4 col-8 logo">Fashionz</div>
-          <div className="col-2 hidecart">
+          <div className="col-8 col-sm-8  col-md-4 logotop" style={{"color":"white","fontWeight":"bold","textAlign":"center","letterSpacing":"3px"}}>Fashionz</div>
+          <div className="col-2 text-center hidecart">
             <Link onClick={displayCartSlider} className="iconcart"><FaCartShopping />
               <div className={`dot ${shakeCart ? 'shake' : ''}`}>{cart.length}</div>
             </Link>
           </div>
-          <div className="col-md-4 col-sm-4 text-center d-flex justify-content-between align-items-center headerhide">
-            <Link to="" onClick={headerHomeClick} className={`textHeader ${isActiveHome ? 'active' : ''}`}>Home</Link>
-            <Link to="/mens" onClick={headerMensClick} className={`textHeader ${isActiveMens ? 'active' : ''}`}>Mens</Link>
-            <Link to="/womens" onClick={headerWomensClick} className={`textHeader ${isActiveWomens ? 'active' : ''}`}>Womens</Link>
-            <Link to="/kids" onClick={headerKidsClick} className={`textHeader ${isActiveKids ? 'active' : ''}`}>Kids</Link>
+          
+          <div className="headerhide col-md-4 col-sm-4  text-center d-flex justify-content-between align-items-center">
+              
+                <Link to="" onClick={headerHomeClick} className={`textHeader ${isActiveHome ? 'active' : ''}`}>Home</Link>
+                <Link to="/mens" onClick={headerMensClick} className={`textHeader ${isActiveMens ? 'active' : ''}`}>Mens</Link>
+                <Link to="/womens" onClick={headerWomensClick} className={`textHeader ${isActiveWomens ? 'active' : ''}`}>Womens</Link>
+                <Link to="/kids" onClick={headerKidsClick} className={`textHeader ${isActiveKids ? 'active' : ''}`}>Kids</Link>
+          
+              
+            
           </div>
+         
 
-
-          <div className="col-md-4 col-sm-4 d-flex justify-content-around headerhide">
-            <div className='iconheart'><IoSearch onClick={showSearch} /></div>
-            {isLoggedIn ?
-              <Link to="/login" className="textLogin text-center" onClick={handleLogout}>Logout</Link> :
-              <Link to="/login" onClick={handleLogin} className="textLogin text-center">Login</Link>
-            }
-            <Link onClick={displayProfile} className="iconprofile "><CgProfile /></Link>
-            <Link onClick={displayCartSlider} className="iconcart"><FaCartShopping />
-              <div className={`dot ${shakeCart ? 'shake' : ''}`}>{cart.length}</div>
-            </Link>
+          
+            <div className="col-md-4 col-sm-4 headerhide d-flex justify-content-around">
+              <div className='iconheart'><IoSearch onClick={showSearch} /></div>
+              {isLoggedIn ?
+                <Link to="/login" className="textLogin text-center" onClick={handleLogout}>Logout</Link> :
+                <Link to="/login" onClick={handleLogin} className="textLogin text-center">Login</Link>
+              }
+              <Link onClick={displayProfile} className="iconprofile "><CgProfile /></Link>
+              <Link onClick={displayCartSlider} className="iconcart"><FaCartShopping />
+                <div className={`dot ${shakeCart ? 'shake' : ''}`}>{storedCart.length}</div>
+              </Link>
+            </div>
           </div>
-        </div>
+         
+      
       </div>
 
 
@@ -458,10 +466,10 @@ const Header = () => {
                     <div key={item.id}>
                       <div className="row">
                         <div className="col-md-10 col-10 border-bottom">
-                          <div className='textcart2'>
-                            <span><a href="https://example.com">{item.name}</a></span>-
+                          <div className="textinsidecart">
+                            <span><a style={{"textDecoration":"none","color":"white"} } href="https://example.com">{item.name}</a></span>-
                             <span>{`Size: (${item.size})`}</span>-
-                            <span><a href="https://example.com"> Price: Rs.{item.price}</a></span>
+                            <span><a style={{ "textDecoration": "none", "color": "white" }} href="https://example.com"> Price: Rs.{item.price}</a></span>
                           </div>
                         </div>
                         <div className="col-md-2 col-2 border-bottom">

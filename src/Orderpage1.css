@@ -6,6 +6,14 @@
     background: var(--white);
 
 }
+.textcart2 a{
+    text-decoration: none;
+    color: grey;
+    cursor: default;
+}
+.textcart2 a:hover{
+    color: grey;
+}
 
 .wrapper .header {
     margin-bottom: 35px;
@@ -150,11 +158,11 @@
 
 .wrapper .btns_wrap .common_btns button.btn_next:hover,
 .wrapper .btns_wrap .common_btns button.btn_done:hover {
-    background: var(--next-btn-hover);
+    background:rgb(119, 0, 255);
 }
 
 .wrapper .btns_wrap .common_btns button.btn_back:hover {
-    background: var(--back-btn-hover);
+    background:rgb(64, 64, 64);
 }
 
 .modal_wrapper {
@@ -225,6 +233,9 @@
         margin-bottom: 200px;
 
     }
+    .mltotal{
+        margin-left:70px;
+    }
 
     .wrapper .header {
         margin-bottom: 10px;
@@ -278,6 +289,10 @@
     .header {
         margin-top: 80px;
     }
+         .mltotal {
+             margin-left: 170px;
+         }
+        
 }
 
 @media screen and (min-width:577px) and (max-width: 640px) {
@@ -290,6 +305,9 @@
     .header {
         margin-top: 80px;
     }
+         .mltotal {
+             margin-left: 210px;
+         }
 }
 
 @media screen and (min-width:641px) and (max-width: 767px) {
@@ -302,6 +320,9 @@
     .header {
         margin-top: 80px;
     }
+        .mltotal {
+            margin-left: 280px;
+        }
 }
 
 @media screen and (min-width:768px) and (max-width: 1024px) {
@@ -314,6 +335,12 @@
     .header {
         margin-top: 80px;
     }
+        .wrapper {
+            width: 950px;
+            max-width: 100%;
+            background: var(--white);
+    
+        }
 }
 
 @media screen and (min-width:1025px) {

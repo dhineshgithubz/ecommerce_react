@@ -5,7 +5,7 @@ import women2 from '../src/img/women2.jpg'
 import women3 from '../src/img/women3.jpg'
 import women4 from '../src/img/women4.jpg'
 import banner2 from '../src/img/banner2.jpg'
-import {useNavigate } from 'react-router-dom'
+import {useNavigate,useLocation } from 'react-router-dom'
 import DataContext from './context/DataContext'
 import Alert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
@@ -19,6 +19,8 @@ const Womens = () => {
     const [alertVisible, setAlertVisible] = useState(false);
     const [alertitemVisible, setAlertitemVisible] = useState(false);
     const [loading, setLoading] = useState(true);
+    const { pathname } = useLocation();
+
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -76,6 +78,9 @@ const Womens = () => {
             setAlertitemVisible(false);
         }, 3500);
     };
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     useEffect(
         () => {

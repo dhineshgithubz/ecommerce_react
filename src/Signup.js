@@ -1,4 +1,4 @@
-import React, {useState } from 'react'
+import React, {useState ,useEffect} from 'react'
 import { Link} from "react-router-dom";
 import './Signup.css'
 import { FaRegEye } from "react-icons/fa";
@@ -9,7 +9,7 @@ import { signupApi } from './services/Api';
 import { setStorage } from './services/Storage';
 import Alert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 
 
@@ -18,6 +18,11 @@ const Signup = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
     const [alertVisible, setAlertVisible] = useState(false);
     const navigate = useNavigate();
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     const [error, setError] = useState(
         {

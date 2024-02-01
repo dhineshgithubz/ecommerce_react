@@ -7,9 +7,13 @@ import Alert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
 import { authenticate } from './services/Auth';
 import { useTheme, useMediaQuery } from '@mui/material';
+import {useLocation } from 'react-router-dom';
+
 
 const Orderpage1 = () => {
   const [alertitemVisible, setAlertitemVisible] = useState(false);
+  const { pathname } = useLocation();
+
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -19,6 +23,9 @@ const Orderpage1 = () => {
   const alertFont = isSmallScreen ? '11px' : '16px';
   const alertTop = isSmallScreen ? '8%' : '12%';
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   const handleAlertClick = (e) => {
     e.preventDefault();
@@ -81,10 +88,10 @@ const Orderpage1 = () => {
         {step === 1 && (
           <div className="data_info">
             <h2>Your Order Details</h2>
-            <div>
-              <div>
-                <div className="row">
-                  <div className="col-md-4 col-lg-3">
+            
+              
+                <div className="row text-center">
+                  <div className="col-md-4  col-lg-3">
 
                   </div>
                   <div className="col-md-7 mt-5">
@@ -95,7 +102,7 @@ const Orderpage1 = () => {
                         <div key={item.id}>
                           <div className="row">
                             <div className="col-md-10">
-                              <div className='textcart2'>
+                              <div className="textcart2">
                                 <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
                                 <span className="text-secondary">{`Size:(${item.size})`}</span>-
                                 <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
@@ -112,7 +119,7 @@ const Orderpage1 = () => {
                         <div className="row">
                           <div className="col-md-10">
                             <div className="d-flex">
-                              <div className="fw-bold fs-2 mt-3">
+                          <div className="fw-bold fs-2 mt-3 mltotal">
 
                                 {storedCart.length !== 0 ? (`Total Price: Rs.${totalPrice}`) : "You have not selected any product"}
 
@@ -130,7 +137,7 @@ const Orderpage1 = () => {
                           <div key={item.id}>
                             <div className="row">
                               <div className="col-md-10">
-                                <div className='textcart2'>
+                                <div className="textcart2">
                                   <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
                                   <span className="text-secondary">{`Size:(${size})`}</span>-
                                   <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
@@ -143,7 +150,7 @@ const Orderpage1 = () => {
                             <div className="row">
                               <div className="col-md-10">
                                 <div className="d-flex">
-                                  <div className="fw-bold fs-2 mt-3">
+                                  <div className="fw-bold fs-2 mt-3 mltotal">
                                     Total Price : Rs.{item.price}
                                   </div>
                                   <div>
@@ -162,13 +169,13 @@ const Orderpage1 = () => {
                     </form>
                   </div>
 
-                </div>
-              </div>
-              <div>
+                
+              
+              
 
               </div>
             </div>
-          </div>
+          
         )}
 
         {step === 2 && (
@@ -179,9 +186,9 @@ const Orderpage1 = () => {
                 <div className="col-md-3 col-sm-3 col-2">
 
                 </div>
-                <div className="col-md-6 col-sm-6 col-6 mt-5 text-center">
+                <div className="col-md-6 col-sm-6 col-8 mt-5  text-center">
 
-                  <form action="" className="">
+                  <form action="" className="text-center">
                     <label htmlFor="">Name: </label>
                     <br />
                     <input type="text" value={user.displayName} />
@@ -209,12 +216,12 @@ const Orderpage1 = () => {
             <form>
               <div>
                 <div className="row">
-                  <div className="col-md-4 col-2 col-sm-3 col-lg-3">
+                  <div className="col-md-4 col-2 col-sm-4 col-lg-3">
 
                   </div>
-                  <div className="col-md-7 col-7 col-sm-7 mt-5 ">
+                  <div className="col-md-7 col-10 text-center col-sm-7 mt-5 ">
 
-                    <form action="">
+                    <form action="" className='text-center'>
 
                       <div className="text-start">
                         <label htmlFor="">Address Line1: </label>

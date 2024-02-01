@@ -5,7 +5,7 @@ import kids1 from '../src/img/kids1.jpg'
 import kids2 from '../src/img/kids2.jpg'
 import kids3 from '../src/img/kids3.jpg'
 import kids5 from '../src/img/kids5.jpg'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,useLocation} from 'react-router-dom'
 import DataContext from './context/DataContext'
 import Alert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
@@ -24,11 +24,17 @@ const Kids = () => {
     const [loading, setLoading] = useState(true);
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const { pathname } = useLocation();
 
     const alertWidth = isSmallScreen ? '90%' : '400px';
     const alertHeight = isSmallScreen ? '25px' : '50px';
     const alertFont = isSmallScreen ? '11px' : '16px';
     const alertTop = isSmallScreen ? '8%' : '12%';
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    
     useEffect(() => {
         const checkAuthentication = () => {
             setIsLoggedIn(authenticate());

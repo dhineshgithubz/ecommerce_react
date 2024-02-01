@@ -73,7 +73,7 @@
 
 .textnamezoom {
     position: absolute;
-    left: -30px;
+    left: -10px;
     top: 20%;
     font-size: 32px;
     text-transform: capitalize;
@@ -299,6 +299,7 @@
         width: 100px;
         font-weight: 400;
         margin-top: 20px;
+        margin-left: 15px;
 
     }
 
@@ -406,6 +407,7 @@
         width: 100px;
         font-weight: 400;
         margin-top: 20px;
+        margin-left:20px;
 
     }
 
@@ -514,6 +516,7 @@
         width: 100px;
         font-weight: 400;
         margin-top: 20px;
+        margin-left: 20px;
 
     }
 
@@ -621,6 +624,7 @@
         width: 100px;
         font-weight: 400;
         margin-top: 20px;
+        margin-left: 20px;
 
     }
 
@@ -728,6 +732,7 @@
         width: 100px;
         font-weight: 400;
         margin-top: 20px;
+        margin-left: 25px;
 
     }
 
@@ -831,6 +836,7 @@
         width: 120px;
         font-weight: bold;
         margin-top: 20px;
+        margin-left: 20px;
 
     }
 
