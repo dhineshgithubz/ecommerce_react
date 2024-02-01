@@ -274,7 +274,7 @@ const Orderpage1 = () => {
                     <div className="col-md-4 col-sm-4 col-2 col-lg-3">
 
                     </div>
-                    <div className="col-md-7 col-sm-7 col-5 mt-5 text-start">
+                    <div className="col-md-7 col-sm-7 col-7 mt-5 text-start">
 
                       <form action="">
                         <input type="radio" name="pay" style={{ "marginRight": "20px" }} />
