@@ -24,7 +24,7 @@ const Womens = () => {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const alertWidth = isSmallScreen ? '90%' : '400px';
+    const alertWidth = isSmallScreen ? '80%' : '400px';
     const alertHeight = isSmallScreen ? '25px' : '50px';
     const alertFont = isSmallScreen ? '11px' : '16px';
     const alertTop = isSmallScreen ? '8%' : '12%';

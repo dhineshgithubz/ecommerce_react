@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-.wrapper {
+.wraporder {
     width: 750px;
     max-width: 100%;
     background: var(--white);
@@ -15,26 +15,26 @@
     color: grey;
 }
 
-.wrapper .header {
+.wraporder .header {
     margin-bottom: 35px;
     display: flex;
     justify-content: center;
 }
 
-.wrapper .header ul {
+.wraporder .header ul {
     display: flex;
 }
 
-.wrapper .header ul li {
+.wraporder .header ul li {
     margin-right: 50px;
     position: relative;
 }
 
-.wrapper .header ul li:last-child {
+.wraporder .header ul li:last-child {
     margin-right: 0;
 }
 
-.wrapper .header ul li:before {
+.wraporder .header ul li:before {
     content: "";
     position: absolute;
     top: 50%;
@@ -45,16 +45,16 @@
     background: var(--secondary);
 }
 
-.wrapper .header ul li:last-child:before {
+.wraporder .header ul li:last-child:before {
     display: none;
 }
 
-.wrapper .header ul li div {
+.wraporder .header ul li div {
     padding: 5px;
     border-radius: 50%;
 }
 
-.wrapper .header ul li p {
+.wraporder .header ul li p {
     width: 50px;
     height: 50px;
     background: var(--secondary);
@@ -64,41 +64,41 @@
     border-radius: 50%;
 }
 
-.wrapper .header ul li.active:before {
+.wraporder .header ul li.active:before {
     background: var(--primary);
 }
 
-.wrapper .header ul li.active p {
+.wraporder .header ul li.active p {
     background: var(--primary);
 }
 
-.wrapper .form_wrap {
+.wraporder .form_wrap {
     margin-bottom: 35px;
 }
 
-.wrapper .form_wrap h2 {
+.wraporder .form_wrap h2 {
     color: var(--header-clr);
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
 
-/* .wrapper .form_wrap .input_wrap {
+/* .wraporder .form_wrap .input_wrap {
     width: 350px;
     max-width: 100%;
     margin: 0 auto 20px;
 } */
 
-/* .wrapper .form_wrap .input_wrap:last-child {
+/* .wraporder .form_wrap .input_wrap:last-child {
     margin-bottom: 0;
 } */
 
-/* .wrapper .form_wrap .input_wrap label {
+/* .wraporder .form_wrap .input_wrap label {
     display: block;
     margin-bottom: 5px;
 } */
 
-/* .wrapper .form_wrap .input_wrap .input {
+/* .wraporder .form_wrap .input_wrap .input {
     border: 2px solid var(--secondary);
     border-radius: 3px;
     padding: 10px;
@@ -108,26 +108,26 @@
     transition: 0.5s ease;
 } */
 
-/* .wrapper .form_wrap .input_wrap .input:focus {
+/* .wraporder .form_wrap .input_wrap .input:focus {
     border-color: var(--primary);
 } */
 
-.wrapper .btns_wrap {
+.wraporder .btns_wrap {
     width: 350px;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.wrapper .btns_wrap .common_btns {
+.wraporder .btns_wrap .common_btns {
     display: flex;
     justify-content: space-between;
 }
 
-.wrapper .btns_wrap .common_btns.form_1_btns {
+.wraporder .btns_wrap .common_btns.form_1_btns {
     justify-content: flex-end;
 }
 
-.wrapper .btns_wrap .common_btns button {
+.wraporder .btns_wrap .common_btns button {
     border: 0;
     padding: 12px 15px;
     background: var(--primary);
@@ -142,26 +142,26 @@
     cursor: pointer;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_back {
+.wraporder .btns_wrap .common_btns button.btn_back {
     background: grey;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_next .icon {
+.wraporder .btns_wrap .common_btns button.btn_next .icon {
     display: flex;
     margin-left: 10px;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_back .icon {
+.wraporder .btns_wrap .common_btns button.btn_back .icon {
     display: flex;
     margin-right: 10px;
 }
 
-.wrapper .btns_wrap .common_btns button.btn_next:hover,
-.wrapper .btns_wrap .common_btns button.btn_done:hover {
+.wraporder .btns_wrap .common_btns button.btn_next:hover,
+.wraporder .btns_wrap .common_btns button.btn_done:hover {
     background:rgb(119, 0, 255);
 }
 
-.wrapper .btns_wrap .common_btns button.btn_back:hover {
+.wraporder .btns_wrap .common_btns button.btn_back:hover {
     background:rgb(64, 64, 64);
 }
 
@@ -225,7 +225,7 @@
 }
 
 @media screen and (min-width:320px) and (max-width: 480px) {
-    .wrapper {
+    .wraporder {
         width: 400px;
         max-width: 90%;
         background: var(--white);
@@ -237,22 +237,22 @@
         margin-left:70px;
     }
 
-    .wrapper .header {
+    .wraporder .header {
         margin-bottom: 10px;
 
     }
 
-    .wrapper .header ul li {
+    .wraporder .header ul li {
         margin-top: 20px;
         margin-right: 10px;
         position: relative;
     }
 
-    .wrapper .header ul li:last-child {
+    .wraporder .header ul li:last-child {
         margin-right: 20px;
     }
 
-    .wrapper .header ul li p {
+    .wraporder .header ul li p {
         width: 40px;
         height: 40px;
         background: var(--secondary);
@@ -262,7 +262,7 @@
         line-height: 40px;
     }
 
-    .wrapper .header ul li:before {
+    .wraporder .header ul li:before {
         content: "";
         position: absolute;
         top: 40%;
@@ -281,7 +281,7 @@
 }
 
 @media screen and (min-width:481px) and (max-width: 576px) {
-    .wrapper {
+    .wraporder {
 
         margin-bottom: 200px;
 
@@ -297,7 +297,7 @@
 }
 
 @media screen and (min-width:577px) and (max-width: 640px) {
-    .wrapper {
+    .wraporder {
 
         margin-bottom: 200px;
 
@@ -312,7 +312,7 @@
 }
 
 @media screen and (min-width:641px) and (max-width: 767px) {
-    .wrapper {
+    .wraporder {
 
         margin-bottom: 200px;
 
@@ -327,7 +327,7 @@
 }
 
 @media screen and (min-width:768px) and (max-width: 1024px) {
-    .wrapper {
+    .wraporder {
 
         margin-bottom: 200px;
 
@@ -336,7 +336,7 @@
     .header {
         margin-top: 80px;
     }
-        .wrapper {
+        .wraporder {
             width: 950px;
             max-width: 100%;
             background: var(--white);
@@ -345,13 +345,13 @@
 }
 
 @media screen and (min-width:1025px) {
-    .wrapper {
+    .wraporder {
 
         margin-bottom: 200px;
 
     }
 
-    .wrapper {
+    .wraporder {
         width: 400px;
         max-width: 100%;
         background: var(--white);

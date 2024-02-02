@@ -7,7 +7,7 @@ import Alert from '@mui/material/Alert';
 import Slide from '@mui/material/Slide';
 import { authenticate } from './services/Auth';
 import { useTheme, useMediaQuery } from '@mui/material';
-import {useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 const Orderpage1 = () => {
@@ -18,7 +18,7 @@ const Orderpage1 = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const alertWidth = isSmallScreen ? '90%' : '400px';
+  const alertWidth = isSmallScreen ? '80%' : '400px';
   const alertHeight = isSmallScreen ? '25px' : '50px';
   const alertFont = isSmallScreen ? '11px' : '16px';
   const alertTop = isSmallScreen ? '8%' : '12%';
@@ -43,11 +43,10 @@ const Orderpage1 = () => {
     setStep((prevStep) => prevStep - 1);
   };
 
-  const { setIsLoggedIn, orderVisible, size, order,setIsActiveHome, setIsActiveMens, setIsActiveWomens, setIsActiveKids } = useContext(DataContext);
+  const { setIsLoggedIn, orderVisible, size, order, setIsActiveHome, setIsActiveMens, setIsActiveWomens, setIsActiveKids } = useContext(DataContext);
 
   const storedCartString = localStorage.getItem("storedcart");
   const storedCart = JSON.parse(storedCartString);
-  const totalPrice = storedCart.reduce((total, item) => total + parseFloat(item.price), 0);
   useEffect(() => {
     const checkAuthentication = () => {
       setIsLoggedIn(authenticate());
@@ -67,11 +66,11 @@ const Orderpage1 = () => {
       setIsActiveMens(false);
       setIsActiveWomens(false);
       setIsActiveKids(false);
-    }, [setIsActiveHome,setIsActiveMens,setIsActiveWomens,setIsActiveKids]
+    }, [setIsActiveHome, setIsActiveMens, setIsActiveWomens, setIsActiveKids]
   )
 
   return (
-    <div className="wrapper">
+    <div className="wraporder">
       <div className="header">
         <ul>
           {[1, 2, 3, 4].map((index) => (
@@ -90,41 +89,68 @@ const Orderpage1 = () => {
         {step === 1 && (
           <div className="data_info">
             <h2>Your Order Details</h2>
-            
-              
-                <div className="row text-center">
-                  <div className="col-md-4  col-lg-3">
 
-                  </div>
-                  <div className="col-md-7 mt-5">
 
-                    <form action="" className="">
+            <div className="row text-center">
+              <div className="col-md-4  col-lg-3">
 
-                      {orderVisible && storedCart && storedCart.map((item) => (
-                        <div key={item.id}>
-                          <div className="row">
-                            <div className="col-md-10">
-                              <div className="textcart2">
-                                <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
-                                <span className="text-secondary">{`Size:(${item.size})`}</span>-
-                                <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
-                              </div>
+              </div>
+              <div className="col-md-7 mt-5">
+
+                <form action="" className="">
+
+                  {orderVisible && Array.isArray(storedCart) && storedCart.map((item) => (
+                    <div key={item.id}>
+                      <div className="row">
+                        <div className="col-md-10">
+                          <div className="textcart2">
+                            <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
+                            <span className="text-secondary">{`Size:(${item.size})`}</span>-
+                            <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
+                          </div>
+                        </div>
+                        <div className="col-md-2">
+
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-md-10">
+                          <div className="d-flex">
+                            <div className="fw-bold fs-2 mt-3 mltotal">
+
+                              {storedCart && storedCart.length !== 0 ? (`Total Price: Rs.${item.price}`) : "You have not selected any product"}
+
                             </div>
-                            <div className="col-md-2">
+                            <div>
 
                             </div>
                           </div>
-
-
                         </div>
-                      ))}{orderVisible &&
+                      </div>
+                    </div>
+                  ))
+                  }
+
+                  {!orderVisible &&
+                    order && order.map((item) => (
+                      <div key={item.id}>
+                        <div className="row">
+                          <div className="col-md-10">
+                            <div className="textcart2">
+                              <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
+                              <span className="text-secondary">{`Size:(${size})`}</span>-
+                              <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
+                            </div>
+                          </div>
+                          <div className="col-md-2">
+
+                          </div>
+                        </div>
                         <div className="row">
                           <div className="col-md-10">
                             <div className="d-flex">
-                          <div className="fw-bold fs-2 mt-3 mltotal">
-
-                                {storedCart.length !== 0 ? (`Total Price: Rs.${totalPrice}`) : "You have not selected any product"}
-
+                              <div className="fw-bold fs-2 mt-3 mltotal">
+                                Total Price : Rs.{item.price}
                               </div>
                               <div>
 
@@ -132,52 +158,23 @@ const Orderpage1 = () => {
                             </div>
                           </div>
                         </div>
-                      }
-
-                      {!orderVisible &&
-                        order && order.map((item) => (
-                          <div key={item.id}>
-                            <div className="row">
-                              <div className="col-md-10">
-                                <div className="textcart2">
-                                  <span className="text-secondary"><a href="https://example.com">{item.name}</a></span> -
-                                  <span className="text-secondary">{`Size:(${size})`}</span>-
-                                  <span className="text-secondary"><a href="https://example.com"> Price: Rs.{item.price}</a></span>
-                                </div>
-                              </div>
-                              <div className="col-md-2">
-
-                              </div>
-                            </div>
-                            <div className="row">
-                              <div className="col-md-10">
-                                <div className="d-flex">
-                                  <div className="fw-bold fs-2 mt-3 mltotal">
-                                    Total Price : Rs.{item.price}
-                                  </div>
-                                  <div>
-
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
 
 
 
-                          </div>
-                        ))
-                      }
+                      </div>
+                    ))
+                  }
 
-                    </form>
-                  </div>
-
-                
-              
-              
-
+                </form>
               </div>
+
+
+
+
+
             </div>
-          
+          </div>
+
         )}
 
         {step === 2 && (

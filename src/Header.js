@@ -42,7 +42,7 @@ const Header = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const alertWidth = isSmallScreen ? '90%' : '400px';
+  const alertWidth = isSmallScreen ? '80%' : '400px';
   const alertHeight = isSmallScreen ? '25px' : '50px';
   const alertFont = isSmallScreen ? '11px' : '16px';
   const alertTop = isSmallScreen ? '8%' : '12%';
@@ -445,7 +445,8 @@ const Header = () => {
               }
               <Link onClick={displayProfile} className="iconprofile "><CgProfile /></Link>
               <Link onClick={displayCartSlider} className="iconcart"><FaCartShopping />
-                <div className={`dot ${shakeCart ? 'shake' : ''}`}>{storedCart?storedCart.length:"0"}</div>
+              <div className={`dot ${shakeCart ? 'shake' : ''}`}>{Array.isArray(storedCart) ? storedCart.length : 0}</div>
+
               </Link>
             </div>
           </div>
@@ -483,7 +484,7 @@ const Header = () => {
                   </div>}
                 </div>
 
-                {(storedCart.length !== 0) && <Link to="/orderpage" onClick={checkOrderVisible}>
+                {(storedCart && storedCart.length !== 0) && <Link to="/orderpage" onClick={checkOrderVisible}>
                   <div className='btn btn-success mt-5 fs-3'>
                     Checkout
                   </div>
