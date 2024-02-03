@@ -617,6 +617,12 @@ const Header = () => {
               <IoClose />
             </div>
             <div className="menuitems">
+              <div className="loginicon">
+                {isLoggedIn ?
+                  <Link to="/login" className="btn btn-danger logouticon text-center" onClick={handleLogout}>Logout</Link> :
+                  <Link to="/login" onClick={handleLogin} className="btn btn-success  loginicon text-center">Login</Link>
+                }
+              </div>
               <div className='iconheart' onClick={showSearch} ><IoSearch />  Search</div>
               <div>
                 <Link to="" onClick={headerHomeClick} className={`textHeader ${isActiveHome ? 'active' : ''}`}>Home</Link>
@@ -638,12 +644,7 @@ const Header = () => {
                 <Link onClick={displayProfile} className="iconprofile "><CgProfile />  Profile</Link>
 
               </div>
-              <div className="loginicon">
-                {isLoggedIn ?
-                  <Link to="/login" className="textLogin text-center" onClick={handleLogout}>Logout</Link> :
-                  <Link to="/login" onClick={handleLogin} className="textLogin text-center">Login</Link>
-                }
-              </div>
+             
             </div>
           </div>
         </div>

@@ -35,7 +35,8 @@ const Login = () => {
         setPasswordVisible(!passwordVisible);
     };
     const handleInput = (e) => {
-        setInput({ ...input, [e.target.name]: e.target.value })
+        setInput({ ...input, [e.target.name]: e.target.value });
+       
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -105,8 +106,9 @@ const Login = () => {
                 <div className="text-center fs-6">
                     (or)
                 </div>
-                <div className="text-center fw-bold">
-                    <Link to="/signup">Sign up</Link>
+                <div className="text-center">
+                    <span className='fs-5'>If you don't have an account? </span>
+                    <Link className="fw-bold" to="/signup">Sign up</Link>
                 </div>
             </div>
         </div>

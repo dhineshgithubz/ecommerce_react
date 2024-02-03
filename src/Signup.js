@@ -44,44 +44,63 @@ const Signup = () => {
         setPasswordVisible(!passwordVisible);
     };
     const handleInput = (e) => {
-        setInput({ ...input, [e.target.name]: e.target.value })
+        setInput({ ...input, [e.target.name]: e.target.value });
+       
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         let hasError = false;
         if (input.name === "") {
-            error.name.required = true;
+            error.name.required=true ;
+
             hasError = true;
         }
         if (input.email === "") {
             error.email.required = true;
+
+
             hasError = true;
         }
         if (input.password === "") {
             error.password.required = true;
+
             hasError = true;
         }
         if (!hasError) {
             try {
-                const response = await signupApi(input);
-                setStorage(response.data.idToken);
-                setError({ ...error, customerror: false });
-                setAlertVisible(true);
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+                if ((emailPattern.test(input.email)) && (input.password.length>=8)) {
+                    const response = await signupApi(input);
+                    setStorage(response.data.idToken);
+                    setError({ ...error, customerror: false });
+                    setAlertVisible(true);
 
 
 
-                setTimeout(() => {
-                    setAlertVisible(false);
-                    navigate('/login');
+                    setTimeout(() => {
+                        setAlertVisible(false);
+                        navigate('/');
 
-                }, 2000);
+                    }, 2000);
+                }
+                else {
+                    if (!emailPattern.test(input.email)) {
+                        setError({ ...error, customerror: "Enter correct email format" });
 
+                    }
+                    if ((input.password.length) < 8) {
+                        setError({...error,customerror:"Password should contains atleast 8 characters"})
+                    }
+                    if ((!emailPattern.test(input.email)) && (input.password.length < 8)) {
+                        setError({ ...error, customerror: "Enter correct email format and Password should contains atleast 8 characters" })
+                    }
+                    
 
+                }
+             } catch (err) {
 
-            } catch (err) {
-
-                setError({ ...error, customerror: "UserAccount already exists" });
+                setError({ ...error, customerror: "Email or password has invalid format" });
 
             }
 

@@ -327,8 +327,10 @@
     }
 
     .loginicon {
-        position: fixed;
-        bottom: 20px;
+        width:80px;
+    }
+    .logouticon{
+        width:80px;
     }
 
     .menu {
@@ -391,13 +393,13 @@
         font-size: 16px;
         text-decoration: none;
     }
+.loginicon {
+    width: 80px;
+}
 
-    .loginicon {
-        position: fixed;
-        bottom: 20px;
-    }
-
-
+.logouticon {
+    width: 80px;
+}
     .menu {
         display: inline;
     }
@@ -453,10 +455,13 @@
         text-decoration: none;
     }
 
-    .loginicon {
-        position: fixed;
-        bottom: 20px;
-    }
+   .loginicon {
+       width: 80px;
+   }
+
+   .logouticon {
+       width: 80px;
+   }
 
     .menu {
         display: inline;
@@ -512,10 +517,12 @@
             font-size: 16px;
             text-decoration: none;
         }
-    
         .loginicon {
-            position: fixed;
-            bottom: 20px;
+            width: 80px;
+        }
+    
+        .logouticon {
+            width: 80px;
         }
     
         .menu {
@@ -567,10 +574,6 @@
                text-decoration: none;
            }
         
-           .loginicon {
-               position: fixed;
-               bottom: 20px;
-           }
 
            .menu {
                display: inline;
